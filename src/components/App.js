@@ -16,7 +16,7 @@ function App() {
     return (
         <div>
             <Header/>
-            <Routes/>
+            <div className='main'><Routes/></div>
             <Footer/>
         </div>
     );
