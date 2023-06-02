@@ -6,7 +6,16 @@ import Image from "../../../assets/img/Images";
 
 const Retail = () => {
   const { t } = useTranslation();
+  const handleDownload = () => {
+    const pdfUrl = process.env.PUBLIC_URL + "/pdf/rublevsky.pdf";
 
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+
+    link.download = "rublevsky.pdf";
+
+    link.click();
+  };
   return (
     <>
       <div className="container-fluid mb-sm-5 mb-3 pb-sm-5 mb-3">
@@ -36,7 +45,7 @@ const Retail = () => {
           <div className="col-sm-6 col-12 d-flex flex-column rublevski-content">
             <span>{t("retailText3")}</span>
             <div className="mt-3">
-            <button ><a href="/docs/rublevsky.pdf" download >{t("download")}</a></button>
+            <button onClick={handleDownload}>{t("download")}</button>
             </div>
           </div>
         </div>
